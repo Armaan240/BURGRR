@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BURGRR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./Images/burger (1).png"> 
+ <style>
+   body {
+  font-family: 'Poppins', sans-serif;
+}
+.hero-gradient {
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.3) 0%,
+    rgba(163, 230, 53, 0.3) 50%,
+    rgba(6, 78, 59, 0.4) 100%
+  );
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes floatDelay {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: floatDelay 4s ease-in-out infinite;
+}
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.8); }
+}
+.btn-glow:hover {
+  animation: pulse-glow 2s infinite;
+}
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-amber-200 via-lime-200 to-emerald-900 min-h-screen p-2 sm:p-4 relative overflow-x-hidden">
+  <div class="fixed top-0 left-0 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply blur-3xl opacity-20 animate-float"></div>
+  <div class="fixed bottom-0 right-0 w-96 h-96 bg-green-300 rounded-full mix-blend-multiply blur-3xl opacity-20 animate-float-delay"></div>
+  <nav class="hidden lg:flex items-center justify-between bg-black/60 px-4 py-3 shadow-xl rounded-xl backdrop-blur-md relative z-20">
+    <ul class="flex gap-4">
+      <li><a href="index.html" class="text-white hover:text-orange-400 transition">Home</a></li>
+      <li><a href="history.html" class="text-white hover:text-orange-400 transition">History</a></li>
+      <li><a href="#contact" class="text-white hover:text-orange-400 transition">Contact</a></li>
+    </ul>
+    <div class="flex-1 mx-8 overflow-hidden">
+      <div class="animate-scroll whitespace-nowrap inline-block text-yellow-300 text-sm">
+        <span>🍔 Why did the burger go to the gym? To get better buns! 🍔 What do you call a burger that's afraid? A chicken burger! 🍔 How do burgers introduce themselves? "Nice to meat you!" 🍔 What's a burger's favorite exercise? The patty press! 🍔 Why don't burgers ever win races? They always get grilled!</span>
+        <span>🍔 Why did the burger go to the gym? To get better buns! 🍔 What do you call a burger that's afraid? A chicken burger! 🍔 How do burgers introduce themselves? "Nice to meat you!" 🍔 What's a burger's favorite exercise? The patty press! 🍔 Why don't burgers ever win races? They always get grilled!</span>
+      </div>
+    </div>
+    <h1 class="text-lg text-white font-bold relative tracking-wide">
+      BURGRR
+      <span class="absolute bottom-0 left-0 w-full h-1 bg-green-500 rounded"></span>
+    </h1>
+  </nav>
+  <section id="home" class="mt-8 sm:mt-10 lg:mt-14 px-2 sm:px-4 relative overflow-hidden min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-start justify-center pt-20">
+    <img src="./Images/tomato.png" class="absolute top-20 left-4 sm:left-8 w-28 sm:w-36 md:w-48 animate-float drop-shadow-2xl" />
+    <img src="./Images/onion.png" class="absolute bottom-32 left-4 sm:left-8 w-32 sm:w-40 md:w-52 animate-float-delay drop-shadow-2xl" />
+    <img src="./Images/onion.png" class="absolute top-24 right-4 sm:right-8 w-32 sm:w-40 md:w-52 animate-float-delay drop-shadow-2xl" />
+    <img src="./Images/tomato.png" class="absolute bottom-40 right-4 sm:right-8 w-28 sm:w-36 md:w-48 animate-float drop-shadow-2xl" />
+
+    <div class="w-[550px] bg-white border-2 border-emerald-950 rounded-3xl p-8 text-center mt-8">
+        <h2 class="text-emerald-950 text-3xl font-poppins mb-6">Welcome to BURGRR Game</h2>
+        <div class="content">
+            <p class="font-bold text-5xl tracking-widest text-center mb-6" id="word-display">UGRBRR</p>
+            <div class="details mb-4">
+                <p class="hint mb-2">Hint: <span id="hint-text">Uhh bro you really need this</span></p>
+                <p class="time">Time Left: <span id="time-left"><b>30</b>s</span></p>
+            </div>
+            <input type="text" id="word-input" placeholder="Enter a valid word" class="w-full p-3 border border-gray-300 rounded-lg mb-4">
+            <div class="buttons flex gap-4 mb-4">
+                <button id="refresh-btn" class="refresh-word flex-1 bg-yellow-300 hover:bg-yellow-400 py-2 rounded-lg transition">Refresh</button>
+                <button id="check-btn" class="check-word flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-lg transition">Check</button>
+            </div>
+            <div class="text-center">
+                <p class="text-gray-600">Score: <span id="score">0</span></p>
+                <p class="text-gray-600">Words Found: <span id="words-found">0/8</span></p>
+            </div>
+        </div>
+    </div>
+
+  </section>
+  <footer id="contact" class="mt-10 py-6 border-t border-gray-400 text-center text-xs text-black">
+    <p>Made with Hardwork For Foodie To Spread 💕 | Contact: <a href="mailto:amusoni240@gmail.com" class="text-red-500 hover:underline">amusoni240@gmail.com</a></p>
+  </footer>
+
+  <script>
+    const words = [
+      { word: "BURGER", hint: "The main attraction" },
+      { word: "CHEESE", hint: "Melted goodness on top" },
+      { word: "PATTY", hint: "The meaty center" },
+      { word: "BUNS", hint: "Top and bottom holders" },
+      { word: "LETTUCE", hint: "Green crunchy layer" },
+      { word: "TOMATO", hint: "Red juicy slice" },
+      { word: "ONION", hint: "Adds flavor and crunch" },
+      { word: "PICKLE", hint: "Tangy green slice" }
+    ];
+    let currentWordIndex = 0;
+    let score = 0;
+    let wordsFound = 0;
+    let timeLeft = 30;
+    let timer;
+    let usedIndices = [];
+    const wordDisplay = document.getElementById('word-display');
+    const hintText = document.getElementById('hint-text');
+    const timeLeftDisplay = document.getElementById('time-left');
+    const wordInput = document.getElementById('word-input');
+    const refreshBtn = document.getElementById('refresh-btn');
+    const checkBtn = document.getElementById('check-btn');
+    const scoreDisplay = document.getElementById('score');
+    const wordsFoundDisplay = document.getElementById('words-found');
+
+    function initGame() {
+      resetTimer();
+      getNewWord();
+      updateScoreDisplay();
+      wordInput.focus();
+    }
+    function getNewWord() {
+      if (usedIndices.length >= words.length) {
+        usedIndices = [];
+      }
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * words.length);
+      } while (usedIndices.includes(newIndex));    
+      usedIndices.push(newIndex);
+      currentWordIndex = newIndex
+      const shuffledWord = shuffleWord(words[currentWordIndex].word);
+      wordDisplay.textContent = shuffledWord;
+      hintText.textContent = words[currentWordIndex].hint;
+      wordInput.value = '';
+    }
+
+    function shuffleWord(word) {
+      const arr = word.split('');
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr.join('');
+    }
+    function checkAnswer() {
+      const userAnswer = wordInput.value.trim().toUpperCase();
+      const correctAnswer = words[currentWordIndex].word;
+      if (userAnswer === correctAnswer) {
+        score += 10;
+        wordsFound++;
+        updateScoreDisplay();
+        
+        if (wordsFound >= words.length) {
+          clearInterval(timer);
+          alert(`Congratulations! You found all ${words.length} words! Final score: ${score}`);
+          resetGame();
+        } else {
+          getNewWord();
+          resetTimer();
+        }
+      } else {
+        alert('Incorrect! Try again.');
+        wordInput.value = '';
+        wordInput.focus();
+      }
+    }
+    function updateScoreDisplay() {
+      scoreDisplay.textContent = score;
+      wordsFoundDisplay.textContent = `${wordsFound}/${words.length}`;
+    }
+    function resetTimer() {
+      clearInterval(timer);
+      timeLeft = 30;
+      timeLeftDisplay.innerHTML = `<b>${timeLeft}</b>s`;
+      timer = setInterval(() => {
+        timeLeft--;
+        timeLeftDisplay.innerHTML = `<b>${timeLeft}</b>s`;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          alert('Time\'s up! Moving to next word.');
+          getNewWord();
+          resetTimer();
+        }
+      }, 1000);
+    }
+    function resetGame() {
+      score = 0;
+      wordsFound = 0;
+      usedIndices = [];
+      initGame();
+    }
+    refreshBtn.addEventListener('click', () => {
+      getNewWord();
+      resetTimer();
+    });
+    checkBtn.addEventListener('click', checkAnswer);
+    wordInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        checkAnswer();
+      }
+    });
+    initGame();
+  </script>
+</body>
+</html>

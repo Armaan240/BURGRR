@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BURGRR - NonVeg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./Images/burger (1).png">
+  <style>
+      body {
+  font-family: 'Poppins', sans-serif;
+}
+.hero-gradient {
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.3) 0%,
+    rgba(163, 230, 53, 0.3) 50%,
+    rgba(6, 78, 59, 0.4) 100%
+  );
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes floatDelay {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: floatDelay 4s ease-in-out infinite;
+}
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.8); }
+}
+.btn-glow:hover {
+  animation: pulse-glow 2s infinite;
+}
+  </style>
+</head>
+<body class="bg-gradient-to-br from-amber-200 via-lime-200 to-emerald-900 min-h-screen p-2 sm:p-4 relative overflow-x-hidden">
+  <div class="fixed top-0 left-0 w-96 h-96 bg-red-300 rounded-full mix-blend-multiply blur-3xl opacity-20 animate-float"></div>
+  <div class="fixed bottom-0 right-0 w-96 h-96 bg-orange-300 rounded-full mix-blend-multiply blur-3xl opacity-20 animate-float-delay"></div>
+  
+  <nav class="hidden lg:flex items-center justify-between bg-black/60 px-4 py-3 shadow-xl rounded-xl backdrop-blur-md relative z-20">
+    <ul class="flex gap-4">
+      <li><a href="#home" class="text-white hover:text-orange-400 transition">Home</a></li>
+      <li><a href="#regional" class="text-white hover:text-orange-400 transition">Regional</a></li>
+      <li><a href="history.html" class="text-white hover:text-orange-400 transition">History</a></li>
+      <li><a href="game.html" class="text-white hover:text-orange-400 transition">Game</a></li>
+      <li><a href="#contact" class="text-white hover:text-orange-400 transition">Contact</a></li>
+    </ul>
+    <div class="flex-1 mx-8 overflow-hidden">
+      <div class="animate-scroll whitespace-nowrap inline-block text-yellow-300 text-sm">
+        <span>🍔 Why did the burger go to the gym? To get better buns! 🍔 What do you call a burger that's afraid? A chicken burger! 🍔 How do burgers introduce themselves? "Nice to meat you!" 🍔 What's a burger's favorite exercise? The patty press! 🍔 Why don't burgers ever win races? They always get grilled!</span>
+        <span>🍔 Why did the burger go to the gym? To get better buns! 🍔 What do you call a burger that's afraid? A chicken burger! 🍔 How do burgers introduce themselves? "Nice to meat you!" 🍔 What's a burger's favorite exercise? The patty press! 🍔 Why don't burgers ever win races? They always get grilled!</span>
+      </div>
+    </div>
+    <h1 class="text-lg text-white font-bold relative tracking-wide">
+      BURGRR
+      <span class="absolute bottom-0 left-0 w-full h-1 bg-red-500 rounded"></span>
+    </h1>
+  </nav>
+  <section id="home" class="mt-8 sm:mt-10 lg:mt-14 px-2 sm:px-4 relative overflow-hidden min-h-[600px] sm:min-h-[700px] md:min-h-[800px]">
+    <img src="./Images/cheese.png" class="absolute top-20 left-4 sm:left-8 w-28 sm:w-36 md:w-48 animate-float drop-shadow-2xl" />
+    <img src="./Images/patty.png" class="absolute bottom-32 left-4 sm:left-8 w-32 sm:w-40 md:w-52 animate-float-delay drop-shadow-2xl" />
+    <img src="./Images/patty.png" class="absolute top-24 right-4 sm:right-8 w-32 sm:w-40 md:w-52 animate-float-delay drop-shadow-2xl" />
+    <img src="./Images/cheese.png" class="absolute bottom-40 right-4 sm:right-8 w-28 sm:w-36 md:w-48 animate-float drop-shadow-2xl" />
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 relative z-10">
+      <img src="./Images/noveg.png" class="w-64 sm:w-80 md:w-96 lg:w-[450px] md:-ml-24 transform transition duration-300 hover:scale-110 hover:-rotate-3 drop-shadow-xl" />
+      <div class="text-center md:text-left max-w-xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-900 via-orange-600 to-red-900 mb-4 drop-shadow-lg animate-pulse">Burger</h1>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-900 font-semibold drop-shadow-md">An iconic food loved across the globe</p>
+        <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+          <a href="history.html" class="btn-glow bg-yellow-500 rounded-2xl py-4 px-10 text-white font-bold shadow-2xl border-t-4 border-yellow-300 border-b-4 border-amber-900 hover:scale-110 transition flex items-center gap-2">
+            Know More
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="index.html" class="btn-glow bg-green-600 rounded-2xl py-4 px-10 text-white font-bold shadow-2xl border-t-4 border-green-400 border-b-4 border-green-900 hover:scale-110 transition flex items-center gap-2">
+            Bro I Am Veg
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 w-full flex justify-center relative z-10">
+      <div class="relative w-72 sm:w-80 md:w-96 overflow-hidden rounded-3xl border-4 border-red-400 shadow-[0_0_25px_rgba(255,182,193,0.6)] bg-white/30 backdrop-blur-md">
+        <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+          <img src="./Images/nb1.jpg" class="w-full h-56 object-contain p-4 drop-shadow-xl">
+          <img src="./Images/nb2.jpg" class="w-full h-56 object-contain p-4 drop-shadow-xl">
+          <img src="./Images/nb3.avif" class="w-full h-56 object-contain p-4 drop-shadow-xl">
+          <img src="./Images/nb4.jpg" class="w-full h-56 object-contain p-4 drop-shadow-xl">
+        </div>
+        <button id="prev" class="absolute top-1/2 -translate-y-1/2 left-3 bg-black/40 hover:bg-black/60 text-white px-3 py-2 rounded-full shadow-lg">&#10094;</button>
+        <button id="next" class="absolute top-1/2 -translate-y-1/2 right-3 bg-black/40 hover:bg-black/60 text-white px-3 py-2 rounded-full shadow-lg">&#10095;</button>
+      </div>
+    </div>
+  </section>
+  <section id="regional" class="mt-1 px-2 sm:px-4 lg:px-8 py-16 relative z-10 mb-16">
+    <div class="max-w-[1600px] mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between mb-16 gap-4">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center sm:text-left text-transparent bg-clip-text bg-gradient-to-r from-amber-900 via-yellow-600 to-amber-900 drop-shadow-lg"><a class="text-red-700">Non-Veg </a>Regional Burgers</h2>
+        <button id="addBurgerBtn" class="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white font-bold py-3 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110 flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-width="3" stroke-linecap="round"/></svg>
+          Add Your Burger
+        </button>
+      </div>     
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+        <div class="group relative rounded-xl overflow-hidden shadow-[5px_5px_15px_rgba(0,0,0,0.5)] transform transition-all duration-300 hover:scale-105">
+          <img src="./Images/korean.avif" alt="Korean Burger" class="w-full h-80 sm:h-96 object-cover transition-transform duration-500 group-hover:scale-110"/>
+          <div class="absolute inset-x-0 bottom-0 h-0 group-hover:h-full bg-gradient-to-t from-red-900 via-red-800/95 to-transparent transition-all duration-500 flex flex-col items-center justify-center px-8 text-center">
+            <h3 class="text-white text-2xl font-bold mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Korean Burger</h3>
+            <p class="text-gray-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Ignite your taste buds with a fusion of smoky BBQ and juicy, flavorful Korean goodness</p>
+            <button id="KnowMorebtn1" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300 hover:scale-110">Know More</button>
+          </div>
+        </div>
+        <div class="group relative rounded-xl overflow-hidden shadow-[5px_5px_15px_rgba(0,0,0,0.5)] transform transition-all duration-300 hover:scale-105">
+          <img src="./Images/region (1).jpg" alt="American Burger" class="w-full h-80 sm:h-96 object-cover transition-transform duration-500 group-hover:scale-110"/>
+          <div class="absolute inset-x-0 bottom-0 h-0 group-hover:h-full bg-gradient-to-t from-red-900 via-red-800/95 to-transparent transition-all duration-500 flex flex-col items-center justify-center px-8 text-center">
+            <h3 class="text-white text-2xl font-bold mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">American Cheese Burger</h3>
+            <p class="text-gray-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Juicy, beefy, and unbelievably cheesy: the all-American comfort food.</p>
+            <button id="KnowMorebtn2" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300 hover:scale-110">Know More</button>
+          </div>
+        </div>
+        <div class="group relative rounded-xl overflow-hidden shadow-[5px_5px_15px_rgba(0,0,0,0.5)] transform transition-all duration-300 hover:scale-105">
+          <img src="./Images/aus.jpg" alt="Indian Noodle Burger" class="w-full h-80 sm:h-96 object-cover transition-transform duration-500 group-hover:scale-110"/>
+          <div class="absolute inset-x-0 bottom-0 h-0 group-hover:h-full bg-gradient-to-t from-red-900 via-red-800/95 to-transparent transition-all duration-500 flex flex-col items-center justify-center px-8 text-center">
+            <h3 class="text-white text-2xl font-bold mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Australian Burger</h3>
+            <p class="text-gray-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Aussie perfection: a classic egg burger with the lot, from beetroot to pineapple</p>
+            <button id="KnowMorebtn3" class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300 hover:scale-110">Know More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="AddBurgerO" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-amber-50 to-lime-50 rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+      <div class="bg-gradient-to-r from-yellow-500 to-amber-600 rounded-t-xl p-6 relative">
+        <h3 class="text-2xl font-bold text-white text-center">Add Your Burger!</h3>
+        <button id="AddBurgerC" class="absolute top-4 right-4 text-white hover:text-gray-200 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <label class="block text-gray-700 font-semibold mb-2" for="burgerName">Burger Name</label>
+          <input type="text" id="burgerName" placeholder="e.g., Spicy Jalapeño Delight" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-300 focus:border-yellow-500 focus:outline-none transition bg-white shadow-inner">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 font-semibold mb-2" for="countryRegion">Country / Region</label>
+          <input type="text" id="countryRegion" placeholder="e.g., Texas, USA" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-300 focus:border-yellow-500 focus:outline-none transition bg-white shadow-inner">
+        </div>
+        <div class="flex gap-4">
+          <button id="submitBurger" class="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-3 px-6 rounded-10% shadow-lg transform transition-all duration-300 hover:scale-105">
+            Submit
+          </button>
+          <button id="cancelBtn" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-3 px-6 rounded-10% shadow-lg transform transition-all duration-300 hover:scale-105">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="KoreanBurgerPopup" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-amber-50 to-lime-50 rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 scale-95 opacity-0">
+      <div class="bg-gradient-to-r from-yellow-500 to-amber-600 rounded-t-xl p-6 relative">
+        <h3 class="text-2xl font-bold text-white text-center">Korean Burger</h3>
+        <button id="KoreanBurgerClose" class="absolute top-4 right-4 text-white hover:text-gray-200 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <img src="./Images/korean.avif" alt="Korean Burger" class="w-full h-48 object-cover rounded-lg shadow-lg">
+        </div>
+        <p class="text-gray-700 mb-4">The Korean Burger is a succulent Beef or Lamb Burger with :- Brioche Bun.</p>
+        <ul class="list-disc pl-5 text-gray-700 mb-6">
+          <li>Gochujang Chilli Mayonnaise,</li>
+          <li> Lettuce & Crispy Onions</li>
+          <li>Cheese,</li>
+          <li>Special Korean BBQ sauce</li>
+          <li>Sesame seed Brioche Bun.</li>
+        </ul>
+        <p class="text-gray-700">This burger offers a perfect balance of sweet, spicy, and savory flavors that will transport your taste buds to Seoul!</p>
+        <p class="text-center text-gray-600 mb-2 text-sm">Content credit: <a href="https://pepes.co.uk/menu/korean-burger/" class="text-emerald-700 hover:underline" 
+        target="_blank">https://pepes.co.uk/menu/korean-burger/</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="AmericanBurgerPopup" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-amber-50 to-lime-50 rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 scale-95 opacity-0">
+      <div class="bg-gradient-to-r from-yellow-500 to-amber-600 rounded-t-xl p-6 relative">
+        <h3 class="text-2xl font-bold text-white text-center">American Cheese Burger</h3>
+        <button id="AmericanBurgerClose" class="absolute top-4 right-4 text-white hover:text-gray-200 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <img src="./Images/region (1).jpg" alt="American Burger" class="w-full h-48 object-cover rounded-lg shadow-lg">
+        </div>
+        <p class="text-gray-700 mb-4"> American Cheese Supreme burger, has been made keeping in mind some of the best ingredients used in American food  It features:</p>
+        <ul class="list-disc pl-5 text-gray-700 mb-6">
+          <li>grilled chicken,</li>
+          <li>Melted American cheese</li>
+          <li>corn and jalapenos.</li>
+          <li>Fresh onions and pickles</li>
+          <li>soft sesame buns</li>
+        </ul>
+        <p class="text-gray-700">In a world where digital media has diminished many boundaries,And when it comes to global cuisine, it’s difficult not to notice America’s love for burgers!</p>
+        <p class="text-center text-gray-600 mb-2 text-sm">Content credit: <a href="https://mcdonaldsblog.in/2017/12/the-great-american-burger/" class="text-emerald-700 hover:underline" 
+        target="_blank">https://mcdonaldsblog.in/2017/12/the-great-american-burger/</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="AustralianBurgerPopup" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-amber-50 to-lime-50 rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 scale-95 opacity-0">
+      <div class="bg-gradient-to-r from-yellow-500 to-amber-600 rounded-t-xl p-6 relative">
+        <h3 class="text-2xl font-bold text-white text-center">Australian Burger</h3>
+        <button id="AustralianBurgerClose" class="absolute top-4 right-4 text-white hover:text-gray-200 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <img src="./Images/aus.jpg" alt="Australian Burger" class="w-full h-48 object-cover rounded-lg shadow-lg">
+        </div>
+        <p class="text-gray-700 mb-4">The Ultimate Aussie burger that typically includes:</p>
+        <ul class="list-disc pl-5 text-gray-700 mb-6">
+          <li>fried egg on top</li>
+          <li>Slice of beetroot for sweetness</li>
+          <li>minced chuck steak</li>
+          <li>A dash of Worcester sauce</li>
+          <li>Grated cheddar</li>
+        </ul>
+        <p class="text-gray-700">I’m always looking to add to my burger topping repertoire and anything with a runny yolk can’t be bad in my book!</p>
+        <p class="text-center text-gray-600 mb-2 text-sm">Content credit: <a href="https://theglobetrottingpanda.wordpress.com/2012/09/09/the-ultimate-aussie-burger-with-a-fried-egg-and-pickled-beetroot/" class="text-emerald-700 hover:underline" 
+        target="_blank">https://theglobetrottingpanda.wordpress.com/the-ultimate-aussie-burger-with-a-fried-egg-and-pickled-beetroot/</a></p>
+        <p class="text-center text-gray-600 mb-2 text-sm">Content credit: 
+      </div>
+    </div>
+  </div>
+<footer id="contact" class="mt-10 py-6 border-t border-gray-400 text-center text-xs text-black">
+    <p>Made with Hardwork For Foodie To Spread 💕 | Contact: <a href="mailto:amusoni240@gmail.com" class="text-red-500 hover:underline">amusoni240@gmail.com</a></p>
+  </footer>
+  <script>
+    const slider = document.getElementById('slider');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let index = 0;
+    const totalSlides = 4;
+    function updateSlider() {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    });
+    next.addEventListener('click', () => {
+      index = (index + 1) % totalSlides;
+      updateSlider();
+    });
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      updateSlider();
+    }, 3000);
+    const popupModal = document.getElementById('AddBurgerO');
+    const modalContent = document.getElementById('modalContent');
+    const addBurgerBtn = document.getElementById('addBurgerBtn');
+    const closeModal = document.getElementById('AddBurgerC');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const submitBurger = document.getElementById('submitBurger');
+    const burgerName = document.getElementById('burgerName');
+    const countryRegion = document.getElementById('countryRegion');
+
+    function openModal() {
+      popupModal.classList.remove('hidden');
+      popupModal.classList.add('flex');
+      setTimeout(() => {
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+    function closeModalFunc() {
+      modalContent.classList.remove('scale-100', 'opacity-100');
+      modalContent.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        popupModal.classList.add('hidden');
+        popupModal.classList.remove('flex');
+        burgerName.value = '';
+        countryRegion.value = '';
+      }, 300);
+    }
+    addBurgerBtn.addEventListener('click', openModal);
+    closeModal.addEventListener('click', closeModalFunc);
+    cancelBtn.addEventListener('click', closeModalFunc);
+    popupModal.addEventListener('click', (e) => {
+      if (e.target === popupModal) {
+        closeModalFunc();
+      }
+    });
+    submitBurger.addEventListener('click', () => {
+      const name = burgerName.value.trim();
+      const region = countryRegion.value.trim();
+      if (name && region) {
+        alert(`Awesome! Your "${name}" burger from ${region} has been submitted! Thank you for contributing to BURGRR!`);
+        closeModalFunc();
+      } else {
+        alert('Please fill in both fields!');
+      }
+    });
+    const koreanBtn = document.getElementById('KnowMorebtn1');
+    const americanBtn = document.getElementById('KnowMorebtn2');
+    const australianBtn = document.getElementById('KnowMorebtn3');
+    
+    const koreanPopup = document.getElementById('KoreanBurgerPopup');
+    const americanPopup = document.getElementById('AmericanBurgerPopup');
+    const australianPopup = document.getElementById('AustralianBurgerPopup');
+    
+    const koreanClose = document.getElementById('KoreanBurgerClose');
+    const americanClose = document.getElementById('AmericanBurgerClose');
+    const australianClose = document.getElementById('AustralianBurgerClose');
+
+    function openPopup(popup) {
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      setTimeout(() => {
+        const content = popup.querySelector('div');
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+    function closePopup(popup) {
+      const content = popup.querySelector('div');
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
+      }, 300);
+    }
+
+    koreanBtn.addEventListener('click', () => openPopup(koreanPopup));
+    americanBtn.addEventListener('click', () => openPopup(americanPopup));
+    australianBtn.addEventListener('click', () => openPopup(australianPopup));
+    koreanClose.addEventListener('click', () => closePopup(koreanPopup));
+    americanClose.addEventListener('click', () => closePopup(americanPopup));
+    australianClose.addEventListener('click', () => closePopup(australianPopup));
+    koreanPopup.addEventListener('click', (e) => {
+      if (e.target === koreanPopup) closePopup(koreanPopup);
+    });
+    
+    americanPopup.addEventListener('click', (e) => {
+      if (e.target === americanPopup) closePopup(americanPopup);
+    });
+    australianPopup.addEventListener('click', (e) => {
+      if (e.target === australianPopup) closePopup(australianPopup);
+    });
+  </script>
+</body>
+</html>

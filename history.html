@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BURGRR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./Images/burger (1).png">
+  <style>
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes floatDelay {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: floatDelay 4s ease-in-out infinite;
+}
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+.timeline_progress-bar {
+  transition: height 0.18s linear;
+}
+.timeline_item {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: all 0.75s cubic-bezier(.2, .9, .2, 1);
+}
+.timeline_item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body class="bg-gradient-to-br from-amber-200 via-lime-200 to-emerald-900 min-h-screen p-2 sm:p-4 relative overflow-x-hidden">
+
+  <div class="fixed top-0 left-0 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply blur-3xl opacity-20 animate-float"></div>
+  <div class="fixed bottom-0 right-0 w-96 h-96 bg-green-300 rounded-full mix-blend-multiply blur-3xl opacity-20 animate-float-delay"></div>
+
+  <nav class="bg-black/60 px-3 sm:px-4 py-3 shadow-xl rounded-xl backdrop-blur-md relative z-20 mb-4">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-3">
+      <div class="flex items-center justify-between w-full lg:w-auto">
+        <h1 class="text-base sm:text-lg text-white font-bold relative tracking-wide">
+          BURGRR
+          <span id="burgerLine" class="absolute bottom-0 left-0 w-full h-1 bg-green-500 rounded transition-colors duration-300"></span>
+        </h1>
+      </div>
+      <ul class="hidden lg:flex gap-4">
+        <li><a href="index.html" class="text-white hover:text-orange-400">Home</a></li>
+        <li><a href="#timeline" class="text-white hover:text-orange-400">Timeline</a></li>
+      </ul>
+      <div class="flex gap-2">
+        <button id="vegBtn" class="bg-green-500 text-white text-xs sm:text-sm font-bold py-2 px-4 sm:px-6 rounded-full shadow-lg">VEG</button>
+        <button id="nonVegBtn" class="bg-gray-600 text-white text-xs sm:text-sm font-bold py-2 px-4 sm:px-6 rounded-full shadow-lg opacity-60">NON-VEG</button>
+      </div>
+      <div class="w-full lg:flex-1 lg:mx-8 overflow-hidden">
+        <div class="animate-scroll whitespace-nowrap inline-block text-yellow-300 text-xs sm:text-sm">
+          <span>🍔 Why did the burger go to the gym? To get better buns! 🍔 What do you call a burger that's afraid? A chicken burger! 🍔</span>
+          <span>🍔 How do burgers introduce themselves? "Nice to meat you!" 🍔 What's a burger's favorite exercise? The patty press! 🍔</span>
+        </div>
+      </div>
+      <button id="addTimelineBtn" class="bg-yellow-500 hover:bg-yellow-600 text-white text-xs sm:text-sm font-bold py-2 px-4 sm:px-6 rounded-full shadow-lg">
+        + Add Timeline
+      </button>
+    </div>
+  </nav>
+
+  <section id="home" class="px-2 sm:px-4 relative min-h-screen">
+    <img id="img1" src="./Images/tomato.png" class="absolute top-10 left-2 sm:left-4 w-20 sm:w-28 md:w-36 animate-float drop-shadow-2xl" />
+    <img id="img2" src="./Images/onion.png" class="absolute top-40 left-2 sm:left-4 w-24 sm:w-32 md:w-40 animate-float-delay drop-shadow-2xl" />
+    <img id="img3" src="./Images/tomato.png" class="absolute bottom-40 left-2 sm:left-4 w-20 sm:w-28 md:w-36 animate-float drop-shadow-2xl" />
+    <img id="img4" src="./Images/onion.png" class="absolute bottom-10 left-2 sm:left-4 w-24 sm:w-32 md:w-40 animate-float-delay drop-shadow-2xl" />
+    <img id="img5" src="./Images/onion.png" class="absolute top-10 right-2 sm:right-4 w-24 sm:w-32 md:w-40 animate-float-delay drop-shadow-2xl" />
+    <img id="img6" src="./Images/tomato.png" class="absolute top-40 right-2 sm:right-4 w-20 sm:w-28 md:w-36 animate-float drop-shadow-2xl" />
+    <img id="img7" src="./Images/onion.png" class="absolute bottom-40 right-2 sm:right-4 w-24 sm:w-32 md:w-40 animate-float-delay drop-shadow-2xl" />
+    <img id="img8" src="./Images/tomato.png" class="absolute bottom-10 right-2 sm:right-4 w-20 sm:w-28 md:w-36 animate-float drop-shadow-2xl" />
+
+    <div class="relative z-10 pt-20 pb-10 text-center">
+      <h1 class="text-5xl sm:text-6xl lg:text-8xl font-bold text-yellow-600 mb-6">BURGRR</h1>
+      <p class="text-xl sm:text-2xl text-gray-800 mb-12">Discover the world of burgers</p>
+      <div class="flex justify-center">
+        <img class="w-3/4 sm:w-2/3 md:w-1/2 lg:w-2/5" src="./Images/brgr.png" alt="Burger Image">
+      </div>
+    </div>
+  </section>
+
+<section id="timeline" class="relative bg-transparent text-gray-900 overflow-hidden py-20">
+    <h2 class="text-center text-5xl font-bold mb-8 text-yellow-600">The Burger Evolution</h2>
+    <p class="text-center text-gray-600 mb-2 text-sm">Content credit: <a href="https://www.foodandwine.com/comfort-food/burgers/burger-timeline" class="text-emerald-700 hover:underline" 
+        target="_blank">foodandwine.com/burger-timeline</a></p>
+    <p class="text-center text-gray-800 mb-12 max-w-3xl mx-auto">A long scroll through the burger's journey — dense with odd facts, flavors, and culture shifts. Keep scrolling, you'll learn something weirdly specific.</p>
+
+    <div class="relative max-w-5xl mx-auto px-6">
+      <div class="absolute left-1/2 transform -translate-x-1/2 bg-yellow-400 w-[4px] h-full">
+        <div id="progressBar" class="bg-emerald-700 w-[4px] h-0"></div>
+      </div>
+
+      <div class="space-y-28">
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1st Century AD: Rome</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Isicia Omentata - The first stirrings of what came to resemble a hamburger, this ground- (minced-) meat dish contained pine nuts, pepper, and flavorings of wine and garum.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">13th Century AD: The Steppes</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Steak Tartare - The Mongols were fierce horsemen who conquered most of Eurasia with thick slabs of beef tucked under their saddles, eaten after being tenderized by a day's riding.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1747: London</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">"Hamburg" Sausage - Hannah Glasse's The Art of Cookery is published, describing this smoked sausage of ground (minced) beef, suet, pepper, cloves, nutmeg, garlic, vinegar, salt, red wine, and rum, to be served on toast.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1802: Oxford</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">The Oxford English Dictionary - The English language's foremost lexicon describes Hamburg steak as "a hard slab of salted, minced [ground] beef, often slightly smoked, mixed with onions and breadcrumbs."</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1845: Virginia</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">The Meat Grinder - G. A. Coffman created and patented his Machine for Cutting Sausage-Meat, which featured rotating blades under a spiral feeder, akin to modern meat grinders (mincers).</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1885: Erie County Fair, New York</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">The Menches Brothers - There are dubious and conflicting claims that at this fair in New York State the brothers ran out of pork sausages and so put beef into a sandwich, thereby creating a burger.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1885: Seymour Fair, Wisconsin</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Charlie Nagreen - Nagreen, affectionately known as "Hamburger Charlie," apparently squashed a beef meatball between slices of bread so his customers could walk around eating — a concoction he claimed was the first hamburger.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1891: Bowden, Oklahoma</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Oscar Weber Wilby - The first documented appearance of flame-grilled beef patties in a sourdough bun, created by Bilby and his wife Fanny to celebrate the Fourth of July.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1900: New Haven, Connecticut</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Louis Lassen - The United States Library of Congress credits Lassen with creating the first hamburger, but doubt remains, as his beef patty was served between two slices of toast rather than the bun that the true burger demands.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1904: St. Louis World's Fair, Missouri</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Fletcher Davis - Davis claimed to have been serving beef in sandwiches since the 1880s and to have sold out of his "hamburgers" at this world-famous exhibition.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1906: Chicago, Illinois</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">The Jungle - Upton Sinclair's novel about the meat-packing industry led many Americans to distrust the quality of ground (minced) beef, even though that was not Sinclair's aim at all.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1916: Wichita, Kansas</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Walter Anderson - Anderson, one of the two geniuses behind White Castle, originally started trading from a food cart, serving burgers with specifically created buns and using his own handmade spatula.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1921: Wichita, Kansas</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">White Castle - Cook Walter Anderson and entrepreneur Billy Ingram opened their first restaurant and changed the course of hamburger history, with innovations in design, cooking, and serving.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1925: Pasadena, California</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">The Cheese Hamburger - Lionel Sternberger, running his father's diner, The Rite Spot, claimed to be the first man to put cheese over a patty in a bun, which he called a Cheese Hamburger.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1934: Louisville, Kentucky</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">"A New Tang" - That was how Kaelin's Restaurant described the taste when they melted cheese over patties, which they claimed to be the first proper cheeseburger.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1935: Denver, Colorado</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Cheeseburger™? - Louis Ballast submitted a trademark for "The Cheeseburger" for his now defunct Humpty Dumpty Drive-In, though historians query whether he received it.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1937: Glendale, California</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">The Big Boy - Bob Wian founded Bob's Pantry in 1936 and within a year had gone for broke, slicing a bun into three and using two patties to create the first double-decker burger.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1948: San Bernardino, California</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">McDonald's - Though the McDonald brothers had run a barbecue shack since 1940, in 1948 they switched to hamburgers and started what became the largest fast-food chain in the world.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1954: Miami, Florida</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Burger King - David Edgerton and James McLamore purchased the floundering Insta-Burger King and renamed it, creating the biggest challenger to the McDonald's fast-food crown.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1954: London</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Wimpy's - J. Lyons and Co. bought franchise rights to run Wimpy burger bars in England and opened their first as a concession in a Lyons Corner House restaurant on Coventry Street in Central London.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1955: Des Plaines, Illinois</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Ray Kroc - Ray Kroc, erstwhile milkshake-machine salesman, joined the McDonald brothers before eventually buying them out and transforming the brand into a global phenomenon.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1967: Pittsburgh, Pennsylvania</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">The Big Mac - Though it wasn't introduced nationwide until a year later, 1967 saw the invention by Jim Delligatti of what has become one of McDonald's signature items, the Big Mac.</p>
+          </div>
+        </div>
+
+        <div class="timeline_item grid grid-cols-[1fr_auto_1fr] gap-8 items-start">
+          <div class="text-right">
+            <h3 class="text-2xl text-emerald-700 font-bold sticky top-[50vh]">1969: Columbus, Ohio</h3>
+          </div>
+          <div class="relative">
+            <div class="bg-yellow-400 w-4 h-4 rounded-full shadow sticky top-[50vh]"></div>
+          </div>
+          <div>
+            <p class="text-lg leading-relaxed">Wendy's - For a long time the third-biggest hamburger retailer in the world, Wendy's was a later starter when created by former Kentucky Fried Chicken head chef Dave Thomas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <div id="popupModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-gradient-to-br from-amber-50 to-lime-50 rounded-2xl shadow-2xl max-w-md w-full transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+      <div class="bg-gradient-to-r from-yellow-500 to-amber-600 rounded-t-xl p-6 relative">
+        <h3 class="text-2xl font-bold text-white text-center">Add Your Burger Timeline!</h3>
+        <button id="closeModal" class="absolute top-4 right-4 text-white hover:text-gray-200 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="p-8">
+        <div class="mb-6">
+          <label class="block text-gray-700 font-semibold mb-2" for="burgerName">Date or year/label</label>
+          <input type="text" id="burgerName" placeholder="e.g.1967, " class="w-full px-4 py-3 rounded-lg border-2 border-yellow-300 focus:border-yellow-500 focus:outline-none transition bg-white shadow-inner">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 font-semibold mb-2" for="countryRegion">Enter some more details to Add</label>
+          <input type="text" id="countryRegion" placeholder="e.g.,For a long time the third-biggest hamburger retailer in the world, Wendy's was a later starter" class="w-full px-4 py-3 rounded-lg border-2 border-yellow-300 focus:border-yellow-500 focus:outline-none transition bg-white shadow-inner">
+        </div>
+        <div class="flex gap-4">
+          <button id="submitBurger" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-10% shadow-lg transform transition-all duration-300 hover:scale-105">
+            Submit
+          </button>
+          <button id="cancelBtn" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-3 px-6 rounded-10% shadow-lg transform transition-all duration-300 hover:scale-105">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="contact" class="mt-10 py-6 border-t border-gray-400 text-center text-xs text-black">
+    <p>Made with Hardwork For Foodie To Spread 💕 | Contact: <a href="mailto:amusoni240@gmail.com" class="text-red-500 hover:underline">amusoni240@gmail.com</a></p>
+  </footer>
+ <script>
+const progressBar = document.getElementById("progressBar");
+const items = document.querySelectorAll(".timeline_item");
+const popupModal = document.getElementById('popupModal');
+const modalContent = document.getElementById('modalContent');
+const addTimelineBtn = document.getElementById('addTimelineBtn');
+const closeModal = document.getElementById('closeModal');
+const cancelBtn = document.getElementById('cancelBtn');
+const submitBurger = document.getElementById('submitBurger');
+const burgerName = document.getElementById('burgerName');
+const countryRegion = document.getElementById('countryRegion');
+const vegBtn = document.getElementById('vegBtn');
+const nonVegBtn = document.getElementById('nonVegBtn');
+const burgerLine = document.getElementById('burgerLine');
+const floatingImages = [img1, img2, img3, img4, img5, img6, img7, img8];
+
+window.addEventListener("scroll", () => {
+  const s = window.scrollY;
+  const d = document.body.scrollHeight - window.innerHeight;
+  progressBar.style.height = (s / d * 100) + "%";
+  
+  items.forEach(i => {
+    const r = i.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.82) i.classList.add("visible");
+  });
+});
+
+function openModal() {
+  popupModal.classList.remove('hidden');
+  popupModal.classList.add('flex');
+  setTimeout(() => {
+    modalContent.classList.remove('scale-95', 'opacity-0');
+    modalContent.classList.add('scale-100', 'opacity-100');
+  }, 10);
+}
+function closeModalFunc() {
+  modalContent.classList.remove('scale-100', 'opacity-100');
+  modalContent.classList.add('scale-95', 'opacity-0');
+  setTimeout(() => {
+    popupModal.classList.add('hidden');
+    popupModal.classList.remove('flex');
+    burgerName.value = '';
+    countryRegion.value = '';
+  }, 300);
+}
+addTimelineBtn.addEventListener('click', openModal);
+closeModal.addEventListener('click', closeModalFunc);
+cancelBtn.addEventListener('click', closeModalFunc);
+popupModal.addEventListener('click', e => {
+  if (e.target === popupModal) closeModalFunc();
+});
+submitBurger.addEventListener('click', () => {
+  const n = burgerName.value.trim();
+  const r = countryRegion.value.trim();
+  if (n && r) {
+    alert(`Got it! "${n}" from ${r} added!`);
+    closeModalFunc();
+  } else {
+    alert('Fill both fields!');
+  }
+});
+vegBtn.addEventListener('click', () => {
+  vegBtn.classList.remove('opacity-60', 'bg-gray-600');
+  vegBtn.classList.add('bg-green-500');
+  nonVegBtn.classList.add('opacity-60', 'bg-gray-600');
+  nonVegBtn.classList.remove('bg-red-500');
+  burgerLine.classList.add('bg-green-500');
+  burgerLine.classList.remove('bg-red-500');
+  floatingImages.forEach((img, i) => {
+    img.src = i % 2 === 0 ? './Images/tomato.png' : './Images/onion.png';
+  });
+});
+nonVegBtn.addEventListener('click', () => {
+  nonVegBtn.classList.remove('opacity-60', 'bg-gray-600');
+  nonVegBtn.classList.add('bg-red-500');
+  vegBtn.classList.add('opacity-60', 'bg-gray-600');
+  vegBtn.classList.remove('bg-green-500');
+  burgerLine.classList.add('bg-red-500');
+  burgerLine.classList.remove('bg-green-500');
+  floatingImages.forEach((img, i) => {
+    img.src = i % 2 === 0 ? './Images/patty.png' : './Images/cheese.png';
+  });
+});
+</script>
