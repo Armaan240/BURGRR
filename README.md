@@ -8,6 +8,7 @@ Foodie YSWS in Hackclub you can Check it out on https://bugrr.vercel.app/
 
 ## How I made this 
 i mAde it using my good exp in tailwind css bcz guys its really easy just follow the tailwind docs and wallah you can make it too , also i used all images and contnt from google and given out credit where ever need aslo i saw 2-3 cool features video on Youtube the great thing isthat that in that they were teaching in normal css nad javscript and i tired my best to add my touch to it with tail wind css
+😭idk why but it is so much responsive in mobile but unable to get navbar please use desktop for more good experience 
 
 ## What doesthis Webisite Have 
 I willfully recommend you to check the website bcz i dont want to give spoiler her but yeah it have a whole history and game so imgaes and option to view regional burgers
